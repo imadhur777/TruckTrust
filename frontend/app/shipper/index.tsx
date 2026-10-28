@@ -38,7 +38,7 @@ export default function ShipperHome() {
             gap: spacing.md,
             flexGrow: 1,
           }}
-          refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={refetch} tintColor={colors.brandPrimary} />}
+          refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={() => { refetch(); }} tintColor={colors.brandPrimary} />}
           renderItem={({ item }) => (
             <LoadCard load={item} onPress={() => router.push(`/load/${item.id}`)} />
           )}

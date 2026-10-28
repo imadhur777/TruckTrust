@@ -36,7 +36,7 @@ export function TripsScreen({ role }: { role: "shipper" | "driver" }) {
             gap: spacing.md,
             flexGrow: 1,
           }}
-          refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={refetch} tintColor={colors.brandPrimary} />}
+          refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={() => { refetch(); }} tintColor={colors.brandPrimary} />}
           renderItem={({ item }) => (
             <BookingCard booking={item} role={role} onPress={() => router.push(`/booking/${item.id}`)} />
           )}

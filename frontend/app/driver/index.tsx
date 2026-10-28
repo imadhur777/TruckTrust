@@ -45,7 +45,7 @@ export default function DriverHome() {
             gap: spacing.md,
             flexGrow: 1,
           }}
-          refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={refetch} tintColor={colors.brandPrimary} />}
+          refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={() => { refetch(); }} tintColor={colors.brandPrimary} />}
           renderItem={({ item }) => (
             <LoadCard
               load={item}
